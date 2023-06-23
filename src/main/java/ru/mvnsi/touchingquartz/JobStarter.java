@@ -13,7 +13,7 @@ public class JobStarter {
 
     public void runJob() throws SchedulerException {
         JobDetail jobDetail = newJob(ConsoleWriter.class)
-                .withIdentity("ConsoleWriterJobDetail")
+                .withIdentity("ConsoleWriter")
                 .build();
 
         Trigger trigger = newTrigger()
