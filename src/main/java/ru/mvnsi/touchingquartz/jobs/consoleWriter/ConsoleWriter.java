@@ -1,4 +1,4 @@
-package ru.mvnsi.touchingquartz.quartzJobs;
+package ru.mvnsi.touchingquartz.jobs.consoleWriter;
 
 import org.quartz.InterruptableJob;
 import org.quartz.Job;

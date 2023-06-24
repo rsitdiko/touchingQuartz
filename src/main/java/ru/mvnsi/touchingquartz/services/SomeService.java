@@ -1,6 +1,5 @@
 package ru.mvnsi.touchingquartz.services;
 
-import org.quartz.JobDetail;
 import org.quartz.JobKey;
 import org.quartz.SchedulerException;
 import org.quartz.impl.matchers.GroupMatcher;
@@ -8,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.mvnsi.touchingquartz.SchedulerManager;
-import ru.mvnsi.touchingquartz.quartzJobs.ConsoleWriter;
 
 import java.util.Set;
 
