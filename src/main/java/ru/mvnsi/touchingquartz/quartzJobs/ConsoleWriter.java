@@ -2,13 +2,18 @@ package ru.mvnsi.touchingquartz.quartzJobs;
 
 import org.quartz.InterruptableJob;
 import org.quartz.Job;
+import org.quartz.JobDetail;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.quartz.Trigger;
 import org.quartz.UnableToInterruptJobException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.quartz.JobBuilder.newJob;
+import static org.quartz.TriggerBuilder.newTrigger;
 
 public class ConsoleWriter implements Job, InterruptableJob {
 
@@ -37,4 +42,17 @@ public class ConsoleWriter implements Job, InterruptableJob {
         LOG.info("\n--- Прерываю джобу ---");
         shouldInterrupt = true;
     }
+
+    public JobDetail getJobDetail() {
+        return newJob(ConsoleWriter.class)
+                .withIdentity("ConsoleWriter")
+                .build();
+    }
+
+    public Trigger getTrigger() {
+        return newTrigger()
+                .withIdentity("ConsoleWriterTrigger")
+                .build();
+    }
+
 }
